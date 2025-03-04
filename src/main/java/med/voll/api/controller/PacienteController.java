@@ -51,4 +51,11 @@ public class PacienteController {
 
         return ResponseEntity.noContent().build();
     }
+
+    @GetMapping("/{id}")
+    public ResponseEntity detalhar(@PathVariable Long id) {
+        var paciente = repository.findById(id).orElseThrow(() -> new RuntimeException("Paciente não encontrado"));
+
+        return ResponseEntity.ok(new DadosDetalhamentoPaciente(paciente));
+    }
 }

@@ -53,4 +53,11 @@ public class MedicoController {
 
         return ResponseEntity.noContent().build();
     }
+
+    @GetMapping("/{id}")
+    public ResponseEntity detalhar(@PathVariable Long id) {
+        var medico = repository.findById(id).orElseThrow(() -> new RuntimeException("Médico não encontrado"));
+
+        return ResponseEntity.ok(new DadosDetalhamentoMedico(medico));
+    }
 }
