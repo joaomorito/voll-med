@@ -36,7 +36,7 @@ public class AgendaDeConsultas {
         var medico = escolherMedico(dados);
 
         //criando uma consulta passando o médico e paciente de acordo com o id informado
-        var consulta = new Consulta(null, medico, paciente, dados.data());
+        var consulta = new Consulta(medico, paciente, dados.data());
 
         //salvando a consulta no banco de dados
         consultaRepository.save(consulta);

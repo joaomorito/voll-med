@@ -2,6 +2,7 @@ package med.voll.api.domain.consulta;
 
 import jakarta.persistence.*;
 import lombok.*;
+import med.voll.api.domain.medico.Especialidade;
 import med.voll.api.domain.medico.Medico;
 import med.voll.api.domain.paciente.Paciente;
 
@@ -29,4 +30,11 @@ public class Consulta {
     private Paciente paciente;
 
     private LocalDateTime data;
+
+    // Construtor personalizado
+    public Consulta(Medico medico, Paciente paciente, LocalDateTime data) {
+        this.medico = medico;
+        this.paciente = paciente;
+        this.data = data;
+    }
 }
