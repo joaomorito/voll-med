@@ -45,7 +45,7 @@ public class AgendaDeConsultas {
         var medico = escolherMedico(dados);
 
         if(medico == null) {
-            throw new ValidacaoException("Não existe médico dsponível nessadata");
+            throw new ValidacaoException("Não existe médico dsponível nessa data");
         }
 
         //criando uma consulta passando o médico e paciente de acordo com o id informado
